@@ -7,14 +7,20 @@
 </head>
 
 <body>
-    <div id="title" style="color:#0032a0; border-bottom : 1px solid gray">
-        <h1>CSU 셔틀버스 실시간 위치 맵</h1>
+    <div id="container" style="width:100%; height:100px; background-color: #0032a0; border-radius: 15px;">
+        <div id="title" style="color:whitesmoke; margin-left: 26%; font-size:larger;">
+            <h1>조선대학교 셔틀버스 실시간 위치 알리미 </h1>
+        </div>
     </div>
     <br>
-    <img class="logo" src="/02/bus-station.png" alt="logo" style="width:100px; height:100px;">
-    <h2>버스의 <u>현재 위치를 확인</u>하세요!</h2>
+
+    <img class="logo" src="/02/bus-station.png" alt="logo"
+        style="width:100px; height:100px; border:3px solid gray; border-radius: 13px; margin-left: 5%; margin-top: 50px;">
+    <div id="text" style="margin-left: 5%; width : 400px" >
+        <h2>버스의 <u>현재 위치를 확인</u>하세요!</h2>
+    </div>
     <br>
-    <div id="map" style="width:700px;height:550px; margin-left: 3%; border-radius: 40px; border: 2px solid gray;"></div>
+    <div id="map" style="width:700px;height:550px; margin-left: 39%; margin-bottom: 100%; border-radius: 40px; border: 2px solid gray;"></div>
     <script type="text/javascript"
         src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=18260f17970cf33ea7f7391d0de21343"></script>
     <script>

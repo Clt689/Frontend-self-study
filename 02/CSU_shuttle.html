@@ -7,27 +7,36 @@
 </head>
 
 <body>
-    <div id="container" style="width:100%; height:100px; background-color: #0032a0; border-radius: 15px;">
-        <div id="title" style="color:whitesmoke; margin-left: 26%; font-size:larger;">
-            <h1>조선대학교 셔틀버스 실시간 위치 알리미 </h1>
+    <div id="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 270px; 
+    background-color: #0032a0; border-radius: 15px; border: 3px solid gray; margin-top: 0%;">
+        <div id="title" style="color: whitesmoke; font-size: xx-large; text-align: center;">
+            <h1>조선대학교 셔틀버스</h1>
+            <h1>실시간 위치 알리미</h1>
         </div>
     </div>
+
+    <br>
     <br>
 
-    <img class="logo" src="/02/bus-station.png" alt="logo"
-        style="width:100px; height:100px; border:3px solid gray; border-radius: 13px; margin-left: 5%; margin-top: 50px;">
-    <div id="text" style="margin-left: 5%; width : 400px" >
-        <h2>버스의 <u>현재 위치를 확인</u>하세요!</h2>
+    <div style="display:flex; align-items:center; margin-left: 70px; margin-bottom: 30px;">
+        <img class="logo" src="/02/bus-station.png" alt="logo"
+            style="width:150px; height:150px; border:10px solid gray; border-radius: 20px;">
+        <div id="text" style="width: 800px; margin-right: 10px; font-size: x-large; text-align: center;">
+            <h1>버스의 <u>현재 위치를 확인</u>하세요!</h1>
+        </div>
     </div>
+
     <br>
-    <div id="map" style="width:700px;height:550px; margin-left: 39%; margin-bottom: 100%; border-radius: 40px; border: 2px solid gray;"></div>
+    <div id="map" style="width:940px;height:850px; margin-left: 1%; border-radius: 40px; border: 2px solid gray;"></div>
+
+
     <script type="text/javascript"
         src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=18260f17970cf33ea7f7391d0de21343"></script>
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
             mapOption = {
                 center: new kakao.maps.LatLng(35.14145222141664, 126.9321193676909), // 지도의 중심좌표
-                level: 4 // 지도의 확대 레벨
+                level: 3 // 지도의 확대 레벨
             };
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다

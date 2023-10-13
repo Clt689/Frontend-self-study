@@ -8,7 +8,7 @@
 
 <body>
     <div id="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 270px; 
-    background-color: #0032a0; border-radius: 15px; border: 3px solid gray; margin-top: 0%;">
+    background-color: #0032a0; border-radius: 70px; border: 3px solid gray; margin-top: 0%;">
         <div id="title" style="color: whitesmoke; font-size: xx-large; text-align: center;">
             <h1>조선대학교 셔틀버스</h1>
             <h1>실시간 위치 알리미</h1>
@@ -18,16 +18,16 @@
     <br>
     <br>
 
-    <div style="display:flex; align-items:center; margin-left: 70px; margin-bottom: 30px;">
+    <div style="display:flex; align-items:center; margin-left: 50px; margin-bottom: 30px;">
         <img class="logo" src="/02/bus-station.png" alt="logo"
             style="width:150px; height:150px; border:10px solid gray; border-radius: 20px;">
         <div id="text" style="width: 800px; margin-right: 10px; font-size: x-large; text-align: center;">
-            <h1>버스의 <u>현재 위치를 확인</u>하세요!</h1>
+            <h1> 버스의 <u>현재 위치를 확인</u>하세요!</h1>
         </div>
     </div>
 
     <br>
-    <div id="map" style="width:940px;height:850px; margin-left: 1%; border-radius: 40px; border: 2px solid gray;"></div>
+    <div id="map" style="width:940px;height:1500px; margin-left: 1%; border-radius: 40px; border: 2px solid gray;"></div>
 
 
     <script type="text/javascript"
@@ -66,7 +66,61 @@
             resultDiv.innerHTML = message;
 
         });
+        // 마커를 표시할 위치와 title 객체 배열입니다 
+        var positions = [
+            {
+                title: '출발지',
+                latlng: new kakao.maps.LatLng(35.141939023044976, 126.92780114915257)
+            },
+            {
+                title: '미술대학',
+                latlng: new kakao.maps.LatLng(35.14338939970259, 126.93025518820647)
+            },
+            {
+                title: '중앙도서관',
+                latlng: new kakao.maps.LatLng(35.1423175565204, 126.9316195415852)
+            },
+            {
+                title: '공대2공학관',
+                latlng: new kakao.maps.LatLng(35.13917063351033, 126.9335698684025)
+            },
+            {
+                title: '경상대(본관남쪽)',
+                latlng: new kakao.maps.LatLng(35.140888433987946, 126.93486879242569)
+            },
+            {
+                title: '본관북쪽',
+                latlng: new kakao.maps.LatLng(35.1439053805719, 126.93419700157803)
+            },
+            {
+                title: '학생회관',
+                latlng: new kakao.maps.LatLng(35.143521470165, 126.93268296557616)
+            },
+            {
+                title: '종점',
+                latlng: new kakao.maps.LatLng(35.14255470117653, 126.92864281273113)
+            },
+        ];
 
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+        for (var i = 0; i < positions.length; i++) {
+
+            // 마커 이미지의 이미지 크기 입니다
+            var imageSize = new kakao.maps.Size(55, 82.5); // 원래 (24,35)
+
+            // 마커 이미지를 생성합니다    
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                position: positions[i].latlng, // 마커를 표시할 위치
+                title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                image: markerImage // 마커 이미지 
+            });
+        }
         // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
         var linePath = [
             new kakao.maps.LatLng(35.141939023044976, 126.92780114915257),
@@ -132,16 +186,15 @@
         // 지도에 표시할 선을 생성합니다
         var polyline = new kakao.maps.Polyline({
             path: linePath, // 선을 구성하는 좌표배열 입니다
-            strokeWeight: 4, // 선의 두께 입니다
+            strokeWeight: 6, // 선의 두께 입니다
             strokeColor: '#FFAE00', // 선의 색깔입니다
-            strokeOpacity: 0.5, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
             strokeStyle: 'solid' // 선의 스타일입니다
         });
 
         // 지도에 선을 표시합니다 
         polyline.setMap(map);
-
-
+    </script>
     </script>
 </body>
 

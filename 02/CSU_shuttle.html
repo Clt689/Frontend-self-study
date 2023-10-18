@@ -42,9 +42,13 @@
         <h1>: 교내 정류장 위치</h1>
         </img>
     </div>
+
+
+
     <script type="text/javascript"
         src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=86fbd037bca50f650e642b85b96583d8"></script>
     <script>
+
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
             mapOption = {
                 center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554), // 지도의 중심좌표
@@ -53,13 +57,15 @@
 
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-        var imageSrc = 'https://cdn-icons-24.png', // 마커이미지의 주소입니다    
-            imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-            imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
+        var imageSrc = '/02/그림2.svg', // 마커이미지의 주소입니다    
+            imageSize = new kakao.maps.Size(45, 90), // 마커이미지의 크기입니다
+            imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+            
+        
         // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
         var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-            markerPosition = new kakao.maps.LatLng(35.14152416269298, 126.9312745478554); // 마커가 표시될 위치입니다
+            markerPosition = new kakao.maps.LatLng(35.14272922274663,126.93441741634835); // 마커가 표시될 위치입니다
 
         // 마커를 생성합니다
         var marker = new kakao.maps.Marker({
@@ -105,6 +111,7 @@
             },
         ];
 
+
         // 마커 이미지의 이미지 주소입니다
         var imageSrc = "https://cdn-icons-png.flaticon.com/128/6395/6395324.png";
 
@@ -124,6 +131,10 @@
                 image: markerImage // 마커 이미지 
             });
         }
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
         // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
         var linePath = [
             new kakao.maps.LatLng(35.141939023044976, 126.92780114915257),

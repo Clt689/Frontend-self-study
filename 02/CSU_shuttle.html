@@ -33,7 +33,7 @@
 
     <br>
     <div id="map"
-        style="width:910px;height:1000px; margin-top:3%; margin-left:3%; border-radius: 40px; border: 2px solid gray;">
+        style="width:900px; height:1050px; margin-top:3%; margin-left:3%; border-radius: 40px; border: 2px solid gray;">
     </div>
 
     <br>
@@ -50,31 +50,47 @@
         src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=86fbd037bca50f650e642b85b96583d8"></script>
     <script>
 
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-            mapOption = {
-                center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554), // 지도의 중심좌표
-                level: 3 // 지도의 확대 레벨
-            };
+        var mapContainer = document.getElementById('map');
+        var mapOption = {
+            center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554),
+            level: 3
+        };
 
-        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption);
 
+        var imageSrc = '/02/그림2.svg'; // 초기 버스 아이콘 이미지의 주소입니다
+        var imageSize = new kakao.maps.Size(45, 90);
 
-        var imageSrc = '/02/그림2.svg', // 마커이미지의 주소입니다    
-            imageSize = new kakao.maps.Size(45, 90), // 마커이미지의 크기입니다
-            imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-            
-        
-        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-            markerPosition = new kakao.maps.LatLng(35.14272922274663,126.93441741634835); // 마커가 표시될 위치입니다
+        var imageOption = {
+            offset: new kakao.maps.Point(27, 69),
+        };
 
-        // 마커를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+
+        // 초기 버스 위치 설정
+        var markerPosition = new kakao.maps.LatLng(35.14272922274663, 126.93441741635835);
         var marker = new kakao.maps.Marker({
             position: markerPosition,
-            image: markerImage // 마커이미지 설정 
+            image: markerImage
         });
-        // 지도에 마커를 표시합니다
+
         marker.setMap(map);
+
+        // 버스 위치 업데이트 함수 (실제로는 서버에서 주기적으로 호출되어야 함)
+        function updateBusLocation() {
+            // 새로운 버스 위치 정보를 가져온다.
+            // 새로운 위치 정보는 newMarkerPosition에 할당된다.
+            var newMarkerPosition = new kakao.maps.LatLng(35.141939023044976, 126.92780114915257);
+
+            // 기존 마커의 이미지를 업데이트
+            markerImage.src = '/02/그림2.svg';
+
+            // 마커의 위치를 새로운 위치로 업데이트
+            marker.setPosition(newMarkerPosition);
+        }
+
+        // 일정 간격으로 버스 위치 업데이트 함수 호출 (실제로는 서버에서 주기적으로 위치 정보 업데이트를 호출해야 함)
+        setInterval(updateBusLocation, 1000); // 1초마다 업데이트, 원하는 시간으로 조절
 
         // 마커를 표시할 위치와 title 객체 배열입니다 
         var positions = [
@@ -133,8 +149,6 @@
             });
         }
 
-        // 마커가 지도 위에 표시되도록 설정합니다
-        marker.setMap(map);
 
         // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
         var linePath = [

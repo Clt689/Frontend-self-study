@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Location Tracker</title>
+    <!-- 카카오맵 API 스크립트 추가 -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=86fbd037bca50f650e642b85b96583d8"></script>
+    <!-- 프론트엔드 스타일 추가 -->
+    <style>
+        #map {
+            width:800px;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 지도를 표시할 div -->
+    <div id="map"></div>
+
+    <!-- 프론트엔드 스크립트 추가 -->
+    <script src="frontend.js">
+      var mapContainer = document.getElementById('map');
+        var mapOption = {
+            center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554),
+            level: 3
+        };
+
+    </script>
+</body>
+</html>

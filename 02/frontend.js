@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateBusLocation() {
     // 서버로부터 위치 데이터를 받아오는 Ajax 요청
     // 서버에서는 필요한 데이터를 JSON 형식으로 응답해야 함
-    fetch('http://13.125.227.53/Logtest.php')
+    fetch('http://13.125.227.53/???????????.php') // php 링크 넣기
       .then(response => response.json())
       .then(data => {
         // 받아온 위치 데이터를 이용하여 마커 이동

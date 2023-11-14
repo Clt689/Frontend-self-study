@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 카카오맵 초기화
   var container = document.getElementById('map');
   var options = {
-    center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554), // 초기 위치는 서울을 기준으로 설정
+    center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554), // 초기 위치:중앙도서관
     level: 4
   };
   var map = new kakao.maps.Map(container, options);
@@ -16,23 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // 마커 지도에 표시
   busMarker.setMap(map);
 
+  // 위도와 경도를 출력할 div 엘리먼트
+  var locationInfoDiv = document.getElementById('location-info');
+
   // 서버로부터 위치 데이터를 받아와서 마커 이동
   function updateBusLocation() {
     // 서버로부터 위치 데이터를 받아오는 Ajax 요청
     // 서버에서는 필요한 데이터를 JSON 형식으로 응답해야 함
-    fetch('http://13.125.227.53/???????????.php') // php 링크 넣기
+    fetch('http://13.125.227.53/give.php') // php 링크 넣기
       .then(response => response.json())
       .then(data => {
-        // 받아온 위치 데이터를 이용하여 마커 이동
-        var newPosition = new kakao.maps.LatLng(data.latitude, data.longitude);
-        busMarker.setPosition(newPosition);
-        map.panTo(newPosition); // 지도 이동
-        // 1초마다 위치 업데이트
-        setTimeout(updateBusLocation, 1000);
+        // 위도와 경도를 출력
+        locationInfoDiv.innerHTML = '현재 위치 : 위도: ' + data.lat + ', 경도: ' + data.lon;
+
       })
       .catch(error => console.error('Error:', error));
   }
 
-  // 초기 위치 업데이트
-  updateBusLocation();
 });

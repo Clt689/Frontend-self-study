@@ -23,14 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateBusLocation() {
     // 서버로부터 위치 데이터를 받아오는 Ajax 요청
     // 서버에서는 필요한 데이터를 JSON 형식으로 응답해야 함
-    fetch('http://13.125.227.53/give.php') // php 링크 넣기
+    fetch('http://13.125.227.53/Logtest.php') // php 링크 넣기
       .then(response => response.json())
       .then(data => {
         // 위도와 경도를 출력
         locationInfoDiv.innerHTML = '현재 위치 : 위도: ' + data.lat + ', 경도: ' + data.lon;
-
+        // 받아온 위치로 마커 이동
+        busMarker.setPosition(new kakao.maps.LatLng(data.lat, data.lon));
       })
       .catch(error => console.error('Error:', error));
   }
 
+  // 0.8초 간격으로 위치 업데이트
+  setInterval(updateBusLocation, 800);
 });

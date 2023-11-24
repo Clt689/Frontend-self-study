@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>로그인</title>
 </head>
+
 <body>
     <div id="login-container">
         <h2>로그인</h2>
-        <form name="listForm" method="post" action="http://13.125.227.53/login.php" onsubmit="return login_check();">
+        <form name="listForm" method="post" onsubmit="return login_check();">
             <div class="input-group">
                 <label for="username">아이디</label>
                 <input type="text" id="username" name="username" required>
@@ -18,21 +20,23 @@
             <div class="button-container">
                 <button type="submit">로그인</button>
             </div>
+            <input type="hidden" name="id">
+            <input type="hidden" name="pw">
         </form>
     </div>
-
     <script type="text/javaScript">
+
         function login_check() {
             var id = document.getElementById("username").value;
             var pw = document.getElementById("password").value;
-
-            if(id == "" || pw == "") {
-                alert("아이디와 비밀번호를 모두 입력해주세요.");
-                return false;
-            }
-            alert("로그인에 성공.");
+    
+            document.listForm.id.value = id;
+            document.listForm.pw.value = pw;
+            document.listForm.action = "<c:url value='/check.do'/>";
+    
             return true;
         }
     </script>
 </body>
+
 </html>

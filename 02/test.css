@@ -1,0 +1,63 @@
+.text-white-22-400 {
+  color: white;
+  font-size: 22px;
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  line-height: 40px;
+  word-wrap: break-word;
+}
+
+.text-white-22-700-underline {
+  color: white;
+  font-size: 22px;
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  text-decoration: underline;
+  line-height: 40px;
+  word-wrap: break-word;
+}
+
+.text-white-6-700 {
+  color: white;
+  font-size: 6px;
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  line-height: 40px;
+  word-wrap: break-word;
+}
+
+.text-white-13-400 {
+  color: white;
+  font-size: 13px;
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  line-height: 44px;
+  word-wrap: break-word;
+}
+
+.text-white-19-400 {
+  color: white;
+  font-size: 19px;
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  line-height: 40px;
+  word-wrap: break-word;
+}
+
+.text-black-17-400 {
+  color: black;
+  font-size: 17px;
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  line-height: 40px;
+  word-wrap: break-word;
+}
+
+.text-black-23-400 {
+  color: black;
+  font-size: 23px;
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  line-height: 40px;
+  word-wrap: break-word;
+}

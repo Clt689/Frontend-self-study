@@ -12,48 +12,44 @@
     </head>
 
 <body>
-    <div id="container" style="display: flex; flex-direction: column; justify-content: center; 
-    align-items: center; width: 99%; height: 8%; margin-top : 2%; margin-right: 2%; 
-    background-color: #0032a0; border-radius: 10px; border: 3px solid gray;">
-        <div id="title"
-            style="color: whitesmoke; font-size: x-large; text-align: center;">
-            <h1>조선대학교 셔틀버스 실시간 위치 알리미</h1>
+    <div style="background-color: #273692;">
+            <div id="container" style="display: flex; flex-direction: column; justify-content: center; 
+    align-items: center; width: 99%; height: 160px; margin-top : 3%; margin-right: 2%; 
+    background-color: #F3F7FA; border-radius: 5px; border: 2px solid gray;">
+                <div id="title" style="color: #0032a0; font-size: xx-large; text-align: center;">
+                    <h1>CSU Shuttle-bus</h1>
 
+                </div>
+            </div>
+            <br>
+
+            <div style="display: flex; justify-content: center; width: 100%; margin-top: 2%; margin-bottom: 2%;">
+                <div id="text" style="width:80%; font-size: xxx-large; text-align: center;">
+                    <p>버스의 <u>현재 위치를 확인</u>해보세요!</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: center;">
+                <div id="map"
+                    style="width: 96%; height:850px; margin-top:3%; border-radius: 40px; border: 2px solid gray;">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                <div id="bus-icon explain" style="display: flex; align-items: center;">
+                    <img id="bus-icon" src="/02/bus_image.jpg.svg" style="margin-right: 0%; width:35px; height:80px;">
+                    <div style="width:300px; margin-left: 5%;">
+                        <h1> : 셔틀버스 현재 위치</h1>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript"
+                src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=86fbd037bca50f650e642b85b96583d8"></script>
+            <script src="/02/kakaomap.js"></script>
         </div>
-    </div>
-
-    <br>
-    <br>
-
-    <div style="display: flex; justify-content: center; width: 100%;">
-        <div id="text" style="width:80%; font-size: x-large; text-align: center;">
-            <h1>버스의 <u>현재 위치를 확인</u>해보세요!</h1>
-        </div>
-    </div>    
-
-
-    <br>
-    <div style="display: flex; justify-content: center;">
-        <div id="map" style="width: 96%; height:850px; margin-top:3%; border-radius: 40px; border: 2px solid gray;">
-        </div>
-    </div>
-    
-
-    <br>
-    <br>
-    <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-        <div id="bus-icon explain" style="display: flex; align-items: center;">
-            <img id="bus-icon" src="/02/bus_image.jpg.svg" style="margin-right: 0%; width:35px; height:80px;">
-            <div style="width:300px; margin-left: 5%;"> <h1> : 셔틀버스 현재 위치</h1> </div>
-        </div>
-    </div>  
-
-
-    <script type="text/javascript"
-        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=86fbd037bca50f650e642b85b96583d8"></script>
-    <script src="/02/kakaomap.js"></script>
-
 </body>
-
 
 </html>

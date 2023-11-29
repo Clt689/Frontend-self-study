@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css?ver=18">
+    <title>분실물 게시판</title>
+</head>
+<body>
+    <header>
+        <nav id="navBar">
+            <div class="navBarCon">
+                <div class="navBarleft">
+                    분실물 게시판
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="mainCon">
+            <div class="reviewTitle">분실물 보기</div>
+            <table class="reviewTable">
+                <thead>
+                    <tr>
+                        <td class="reviewTd1">no</td>
+                        <td class="reviewTd2">제목</td>
+                        <td class="reviewTd3">작성시간</td>
+                        <td class="reviewTd4">이미지</td>
+                    </tr>
+                </thead>
+                <?php
+                    while ($review = $sql -> fetch()){
+                ?> 
+                  <?php 
+                    $time = DateTime::createFromFormat('Y-m-d H:i:s', $review['redate']);
+                    $time = date_format($time, 'Y-m-d');
+                    ?>
+                    <tbody>
+                        <tr>
+                            <td class="reviewTd1"><?= $review['no']?></td>
+                            <td class="reviewTd2"><a href="viewpost.php?no=<?= $review['no']?>"><?= $review['title']?></a></td>
+                            <td class="reviewTd3"><?= $time?></td>
+                            <td class="reviewTd4">
+                                <?php 
+                                 if(!$review['image']){
+
+                                 } else{
+                                echo "<br><img src='image/$review[image]'></img>";
+                                  }
+                                ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                <?php } ?>
+                    <tfoot>
+                    <tr>
+                            <td class="reviewTd1"></td>
+                            <td class="reviewTd2"></td>
+                            <td class="reviewTd3"></td>
+                            <td class="reviewTd4"></td>
+                        </tr>
+                    </tfoot>
+            </table>
+            <div class="writeReview"><a href="give.php">글쓰기</a></div>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+</html>

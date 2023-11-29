@@ -15,7 +15,7 @@ var markerPosition = new kakao.maps.LatLng(35.14232922274663, 126.93451741635835
 
 // 버스 아이콘 이미지 설정
 var markerImage = new kakao.maps.MarkerImage(
-    '/02/그림2.svg', // 버스 아이콘 이미지 파일 경로
+    '/0_capstone/그림2.svg', // 버스 아이콘 이미지 파일 경로
     new kakao.maps.Size(40, 80), // 이미지 크기
     {
         offset: new kakao.maps.Point(20, 20) // 이미지 중심을 마커의 중심으로 설정

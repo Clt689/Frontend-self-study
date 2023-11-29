@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 버스 마커 생성
   var busMarker = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(35.141939023044976, 126.92780114915257), // 초기 위치 설정
-    image: new kakao.maps.MarkerImage('/02/그림2.svg', new kakao.maps.Size(20, 40)),
+    image: new kakao.maps.MarkerImage('/0_capstone/그림2.svg', new kakao.maps.Size(20, 40)),
   });
 
   // 마커 지도에 표시

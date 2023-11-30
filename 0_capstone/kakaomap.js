@@ -1,7 +1,7 @@
 var mapContainer = document.getElementById('map');
 var mapOption = {
     center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554),
-    level: 3
+    level: 6
 };
 
 var map = new kakao.maps.Map(mapContainer, mapOption);
@@ -43,7 +43,7 @@ function updateBusLocation() {
 }
 
 // 1초 간격으로 위치 업데이트
-setInterval(updateBusLocation, 1000);
+setInterval(updateBusLocation, 500);
 
 
 /*

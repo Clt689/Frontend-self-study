@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css?ver=18">
+    <title>분실물 신고</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.get("http://15.164.210.143/give2.php", function(data, status){
+                // 'data' contains the output of board.php
+                $("#result").html(data);
+            })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    console.error('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+                });
+        });
+    </script>
+</head>
+<body>
+<form id="myForm" action="#" method="POST" enctype="multipart/form-data">
+    <section>
+        <div class="mainCon">
+            <div class="writeTitle">분실물 신고</div>
+            <input class="writeTypeText" type="text" name="title" size="50" placeholder="제목을 입력해주세요" required></p>
+            <textarea class="writeTextarea" name="story" placeholder="본문을 입력해주세요" required></textarea>
+            <input type="file" name="image">
+            <input type="button" id="submit" value="작성하기">
+            <input type="button" value="취소" onclick="history.back(1)">
+        </div>
+    </section>
+</form>
+
+<!-- 저장된 이미지를 표시하는 부분 -->
+<div id="imageDisplay">
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#submit").click(function () {
+            var formData = new FormData($("#myForm")[0]);
+            $.ajax({
+                url: 'http://15.164.210.143/give2.php',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.success);
+                    }
+                },
+                error: function (jqXHR) {
+                    var errorData = JSON.parse(jqXHR.responseText);
+                    if(errorData.error) {
+                        alert(errorData.error);
+                    } else {
+                        alert('이미지 업로드에 실패했습니다.');
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

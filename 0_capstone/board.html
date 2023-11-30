@@ -50,6 +50,16 @@
     .container .item .date {
       text-align: right;
     }
+
+    .reviewContent {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px; // 이미지와의 간격 조절
+    }
+
+    .reviewContent>* {
+      margin: 0 10px; // 제목과 날짜 사이의 간격 조절
+    }
   </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -107,22 +117,23 @@
 
           <div
             style="color: black; font-size: 15px; font-family: Noto Sans KR; font-weight: 400; line-height: 30px; word-wrap: break-word">
-            <b>분실물/습득물</b></div>
+            <b>분실물/습득물</b>
+          </div>
 
           <table class="reviewTable" style=" width: 300px; border-top: 2px;">
             <thead>
               <tr>
-                <td class="reviewTd1"><b>글번호</b></td>
-                <td class="reviewTd2"><b>제목</b></td>
-                <td class="reviewTd3"><b>작성시간</b></td>
-                <td class="reviewTd4"><b>이미지</b></td>
+
+                <td class="reviewTd2"></td>
+                <td class="reviewTd3"></td>
+                <td class="reviewTd4"></td>
               </tr>
             </thead>
             <tbody id="result"></tbody>
           </table>
 
           <div
-            style="width: 152px; height: 44px; background: linear-gradient(0deg, #0032A0 0%, #0032A0 0%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center;">
+            style="margin-left:30%; width: 152px; height: 46px; background: linear-gradient(0deg, #0032A0 0%, #0032A0 0%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center;">
             <img style="width: 16px; height: 16px; margin-right: 5px;"
               src="https://s3-alpha-sig.figma.com/img/fa8a/9d17/95235f0a627dea3a9ca8b6b21a964f72?Expires=1702252800&Signature=G9Xf03p7QWHQ0JNP1KBnAIeynNHDN8nPaG2AkcwwyW7SWu~ilOGLaZ2pmagLANjUWwmcW6vKRBsHYFawcWIPD-WZSk~uJHLyPeoiCwqYHXYC9HExWy0atm71wZw7z2kj8m0Vj7ue5RjmyjdH7AlzLx-6eBeeXbMOJhspkjZIzBPc7HOg7eIm3HnSzMvf0CvYPvhDn5ZpEV65Rtdcpggu01neUR-wNf4N1uk9lKQeicFfjUuXKUyY4nm0ZaFlvEZULE2EQmfOKHo4h6W2VvhpZR0FBetM21FM9S2yOl1Kb-Ffp6g8zkRkBp8olP63W6-JE3eL6ZjM51DiteqOsLeXhA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
             <a href="http://15.164.210.143/give.php"

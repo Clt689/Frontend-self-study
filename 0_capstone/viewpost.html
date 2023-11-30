@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/style.css?ver=18">
+    <title>분실물 게시판</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.get("http://15.164.210.143/give2.php", function(data, status){
+                // 'data' contains the output of board.php
+                $("#result").html(data);
+            })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    console.error('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+                });
+        });
+    </script>
+</head>
+<body>
+<header>
+    <nav id="navBar">
+        <div class="navBarCon">
+            <div class="navBarleft">
+                <h1>분실물 게시판</h1>
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="mainCon">
+        <div id="viewTitle"></div>
+        <div id="viewInfo"></div>
+        <div id="viewStory"></div>
+        <div class="viewBtn">
+            <a href="http://15.164.210.143/board.html">목록으로</a>
+        </div>
+    </div>
+</section>
+<footer></footer>
+
+<script>
+    $(document).ready(function(){
+        var urlParams = new URLSearchParams(window.location.search);
+        var no = urlParams.get('no');
+
+        $.get("http://15.164.210.143/viewpost2.php?no=" + no, function(data){
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            $('#viewTitle').text(data.title);
+            $('#viewInfo').text(data.redate);
+            $('#viewStory').html(data.story + (data.image ? "<br><img src='http://15.164.210.143/image/" + data.image + "'></img>" : ""));
+        })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.error('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+            });
+    });
+</script>
+
+</body>
+</html>

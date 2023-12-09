@@ -5,72 +5,80 @@
   <div style="top:80px; width: 100%; height: 100%; position: relative; background: white">
 
     <br>
-    <div style="width: 97%; height: 120px; top: 65px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto;">
+    <div
+      style="width: 99%; height: 130px; top: 65px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto;">
       <div
-        style="width: 97%; height: 120px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 25px">
+        style="width: 99%; height: 130px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 25px">
       </div>
       <div
-        style="z-index: 2; width: 50px; height: 5px; left: 45px; top: 38%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
+        style="z-index: 2; width: 46px; height: 5px; left: 40px; top: 38%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
       </div>
       <div
-        style="z-index: 2; width: 36px; height: 5px; left: 45px; top: 60%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
+        style="z-index: 2; width: 36px; height: 5px; left: 40px; top: 58%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
       </div>
       <div
-        style="z-index: 1; display: flex;  height: 120px; align-items: center; justify-content: flex-start; width: 97%; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius:25px">
+        style="z-index: 1; display: flex;  height: 130px; align-items: center; justify-content: flex-start; width: 99%; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius:25px">
         <div
-          style=" margin-left:120px; text-align: center; color: white; font-size: 45px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
+          style=" margin-left:120px; text-align: center; color: white; font-size: 48px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
           실시간 버스 위치
         </div>
       </div>
     </div>
-    <br><br><br><br>
-    <!--운행정보 버튼
-    <div style="width: 92px; height: 43px; left: 91%; top: 152px; position: absolute">
-      <div style="width: 86.13px; height: 30px; top: 8px; position: absolute; background: #626877; border-radius: 10px">
-      </div>
+    <br><br><br><br><br><br><br>
+
+
+    <!--운행정보 버튼-->
+    <div style="width: 200px; height: 90px; right:3%; margin-top: 11%; position: absolute">
       <div
-        style="width: 83.19px; height: 43px; left: 8.81px; position: absolute; color: white; font-size: 13px; font-family: Noto Sans KR; font-weight: 400; line-height: 44px; word-wrap: break-word">
-        운행정보 </div>
-      <img style="width: 21.53px; height: 22px; left: 58.72px; top: 12px; position: absolute"
-        src="https://via.placeholder.com/22x22" />
+        style="width: 200px; height: 72px; display: flex; justify-content: center; align-items: center;  position: absolute; background: #626877; border-radius: 15px">
+        <div
+          style="color: white; font-size: 36px; font-family: Noto Sans KR; font-weight: 400; line-height: 80px; word-wrap: break-word">
+          운행정보
+        </div>
+      </div>
     </div>
-    <img style="width: 17px; height: 39.10px; left: 126px; top: 615px; position: absolute"
-      src="https://via.placeholder.com/17x39" />
-    -->
+
 
 
     <!-- 맵 -->
     <div style="display: flex; justify-content: center;">
-      <div id="map" style="margin-top:193px; width: 94%; height:1000px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; border-radius: 40px; border: 2px solid gray;">
+      <div id="map"
+        style="margin-top:193px; width: 94%; height:1005px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; border-radius: 40px; border: 2px solid gray;">
       </div>
     </div>
     <br>
-    
 
-    <div style="display: flex; align-items: center; justify-content: center; width: 700px; height: 50px; margin-top: 132%; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
+
+    <div
+      style="display: flex; align-items: center; justify-content: center; width: 700px; height: 50px; margin-top: 132%; position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;">
       <img id="bus-icon" src="/0_capstone/bus-icon.svg" style="width:120px; height:120px;">
       <div style="text-align: center;">
-        <span style="color: black; font-size: 34px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word"></span>
-        <span style="margin-left:10px; color: black; font-size: 70px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">- </span>
-        <span style="color: black; font-size: 50px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">현재 버스 위치 </span>
+        <span
+          style="color: black; font-size: 34px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word"></span>
+        <span
+          style="margin-left:10px; color: black; font-size: 70px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">-
+        </span>
+        <span
+          style="color: black; font-size: 50px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">현재
+          버스 위치 </span>
       </div>
-    </div>  
-    
+    </div>
+    <br>
 
 
-    
+
     <div
       style="display: flex; align-items: center; justify-content: center; width: 96%; height: 180px; margin-top: 146%; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: linear-gradient(0deg, #0032A0 0%, #0032A0 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 30px">
       <div style="width: 100%; text-align: center;">
         <span
-          style="color: white; font-size: 60px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">버스의</span>
+          style="color: white; font-size: 55px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">버스의</span>
         <span
-          style="color: white; font-size: 60px; font-family: Noto Sans KR; font-weight: 700; text-decoration: underline; line-height: 40px; word-wrap: break-word">현재
+          style="color: white; font-size: 55px; font-family: Noto Sans KR; font-weight: 700; text-decoration: underline; line-height: 40px; word-wrap: break-word">현재
           위치를 확인</span>
         <span
           style="color: white; font-size: 6px; font-family: Noto Sans KR; font-weight: 700; line-height: 40px; word-wrap: break-word"></span>
         <span
-          style="color: white; font-size: 60px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">해보세요!</span>
+          style="color: white; font-size: 55px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">해보세요!</span>
       </div>
     </div>
     <div

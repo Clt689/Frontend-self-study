@@ -1,7 +1,7 @@
 var mapContainer = document.getElementById('map');
 var mapOption = {
     center: new kakao.maps.LatLng(35.14152416269298, 126.9312745478554),
-    level: 5
+    level: 3
 };
 
 var map = new kakao.maps.Map(mapContainer, mapOption);
@@ -15,8 +15,8 @@ var markerPosition = new kakao.maps.LatLng(35.14232922274663, 126.93451741635835
 
 // 버스 아이콘 이미지 설정
 var markerImage = new kakao.maps.MarkerImage(
-    '/0_capstone/그림2.svg', // 버스 아이콘 이미지 파일 경로
-    new kakao.maps.Size(40, 80), // 이미지 크기
+    '/0_capstone/bus-icon.svg', // 버스 아이콘 이미지 파일 경로
+    new kakao.maps.Size(130, 130), // 이미지 크기
     {
         offset: new kakao.maps.Point(20, 20) // 이미지 중심을 마커의 중심으로 설정
     }

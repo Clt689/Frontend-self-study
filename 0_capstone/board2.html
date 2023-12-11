@@ -4,106 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/default.css">
-    <link rel="stylesheet" href="../css/style.css?ver=18">
     <title>분실물 게시판</title>
+
     <style>
-        .row::after {
-            content: "";
-            clear: both;
-            display: table;
+        .reviewContent {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
         }
 
-        .column {
-            float: left;
-            width: 33.33%;
-            padding: 5px;
-        }
+        
     </style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
             $.get("http://15.164.210.143/board3.php", function (data, status) {
-                // 'data' contains the output of board.php
+                // 'data'에는 board.php의 출력이 포함됩니다.
                 $("#result").html(data);
             })
                 .fail(function (jqXHR, textStatus, errorThrown) {
-                    console.error('AJAX request failed: ' + textStatus + ', ' + errorThrown);
+                    console.error('AJAX 요청 실패: ' + textStatus + ', ' + errorThrown);
                 });
         });
     </script>
 </head>
 
 <body>
-    <header>
+    <!-- 기존 HTML 콘텐츠 -->
+    <div style="top:80px; width: 100%; height: 100%; position: relative; background: white">
+
+        <br>
+        <div
+            style="width: 99%; height: 130px; top: 65px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto;">
+            <div
+                style="width: 99%; height: 130px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 25px">
+            </div>
+            <div
+                style="z-index: 2; width: 46px; height: 5px; left: 40px; top: 38%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
+            </div>
+            <div
+                style="z-index: 2; width: 36px; height: 5px; left: 40px; top: 58%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
+            </div>
+            <div
+                style="z-index: 1; display: flex;  height: 130px; align-items: center; justify-content: flex-start; width: 99%; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius:25px">
+                <div
+                    style="font-size: 48px; margin-left:120px; text-align: center; color: white; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
+                    분실물 게시판
+                </div>
+            </div>
+        </div>
+
+
+        <br><br><br><br><br><br><br><br><br><br>
         <div class="mainCon">
+            <br>
+            <div
+                style="margin-left:2%; display: flex; align-items: center; width: 90%; color: black; font-size: 47px; font-family: Noto Sans KR; font-weight: 400; line-height: 45px; word-wrap: break-word">
+                <div style="flex-grow: 1;">분실물이 주인을 기다리고 있어요</div>
+                <img style="width:75px; height:75px; margin-right: 17%;" src="/0_capstone/sad.svg">
+            </div>
+            <br>
 
+            <div
+                style="display: flex; margin-left:2%; align-items: center; width: 98%; color: black; font-size: 50px; font-family: Noto Sans KR; font-weight: 700; line-height: 55px; word-wrap: break-word">
+                <div style="flex-grow: 1;">게시글을 등록하여 주인을 찾아주세요!</div>
+                <img style="width:100px; height:90px; margin-right: 4%;" src="/0_capstone/wink.svg">
+            </div>
+            <br><br><br><br><br><br>
 
+            <div
+                style="margin-left:2%; color: black; font-size: 47px; font-family: Noto Sans KR; font-weight: 400; line-height: 30px; word-wrap: break-word">
+                <b>분실물/습득물</b>
+            </div>
+            <br>
 
+            <section>
+                <div class="mainCon">
+                    <div class="reviewTitle">
+                        <table class="reviewTable" style="width: 450px; font-size: small;">
+                            <thead></thead>
+                            <tbody id="result" style="margin-top: 500px;"></tbody>
+                        </table>
+                        <br>
 
-            <nav id="navBar">
-                <div style="width: 374px; height: 900px; left: 8px; top: 10px; position: absolute">
-
-                    <div style="width: 374px; height: 53px; left: 0px; top: 0px; position: absolute">
-                        <div
-                            style="width: 390px; height: 53px; left: 0px; top: 0px; position: absolute; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px">
-                        </div>
-                        <div
-                            style="left: 51px; top: 6px; position: absolute; text-align: center; color: white; font-size: 19px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
-                            분실물 게시판</div>
-            </nav>
-    </header>
-    <div>
-        <div class="mainCon">
-
-            <div style="width: 374px; height: 900px; left: 8px; top: 10px; position: absolute">
-
-                <div style="width: 374px; height: 53px; left: 0px; top: 0px; position: absolute">
-                    <div
-                        style="width: 390px; height: 53px; left: 0px; top: 0px; position: absolute; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px">
                     </div>
-                    <div
-                        style="left: 51px; top: 6px; position: absolute; text-align: center; color: white; font-size: 19px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
-                        분실물 게시판</div>
+            </section>
 
-                    <br><br><br>
-                    <div
-                        style="display: flex; align-items: center; width: 61%; color: black; font-size: 15px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
-                        <div style="flex-grow: 1;">분실물이 주인을 기다리고 있어요</div>
-                        <img style="width:20px; height:20px;"
-                            src="https://s3-alpha-sig.figma.com/img/cb85/aad8/367df0d6f7d5c26dab7661c2b5520698?Expires=1702252800&Signature=fYUU5UEfDIrUa8~xL6Ew1sjTdSWFPXlm9mriVFXYAQuhCp4sPu66djxVRequDTeNxCkld7bXn--zRYmkjrfYw1Xv7sTkYaugTuy0YQERNfxsUOs~EvBxzp2f-e5dKM2e5-lBZFDtG4eQYmriv8ZJ820DH7MfI0fSkzhIgnr6LsAfae1DHGdxRYF0JPLc6WAxcsG~pdbttyDinZdpwNvxyQ2DddrJcIa8w9FHE0H-2WS9nvC2W~Z2p36OQcSQfA5kqPzroVes5G9cF~gAsz4~KDshKk5-2eayeGjmjM~zKtqaRNd33v-o7g4QK6jz7nmniPRP1~87eTnYaDenUPmx2Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
-                    </div>
 
-                    <div
-                        style="display: flex; align-items: center; width: 95%; color: black; font-size: 20px; font-family: Noto Sans KR; font-weight: 700; line-height: 25px; word-wrap: break-word">
-                        <div style="flex-grow: 1;">게시글을 등록하여 주인을 찾아주세요!</div>
-                        <img style="width:30px; height:30px; margin-left: 5px;"
-                            src="https://s3-alpha-sig.figma.com/img/0329/0ab4/df45e7c7da88fe60ffd327cbb7edd02b?Expires=1702252800&Signature=iIf2M1TS9~sWbi02PcgNqZjdgMlOu777JtSAmdMygNu3SrOCf7T0guTQSF0md0olAtxVQbaQgiMKna74VCAASCkm3sO1PGqf1Xc08rDF5pnskSajcWBuRP5Qx5doGdSX6qv2iDFBRUxvqaKKSQLoToZp92w9o14sE0GCniCQVt-daGyo~~6OkawdUIO85F2FK1VN5xe8bwMNspkq6dHPsLjz-a49f4tOAfK~pDNNH8~gVqDU55FI2LclZlOSJF10AajQdn70zUrr67FTtww7~rWdsLlekJYzfmB6tChBmVdVl5-8jN-SFM7FhJ9FDbIMTzBI5QwwxQFWJOnM~G4ZDA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
-                    </div>
-                    <br>
+            <div
+                style="margin:auto; width: 30%; height: 80px; background: linear-gradient(0deg, #0032A0 0%, #0032A0 0%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center;">
+                <img style="width: 50px; height: 43px; margin-right: 10px;" src="/0_capstone/regist.svg" />
+                <a href="http://15.164.210.143/give.php"
+                    style="text-decoration-line: none; color:white; font-size: 30px; font-family: Noto Sans KR; font-weight: 500; word-wrap: break-word">분실물 등록하기</a>
+            </div>
 
-                    <div
-                        style="color: black; font-size: 17px; font-family: Noto Sans KR; font-weight: 400; line-height: 30px; word-wrap: break-word">
-                        <b>분실물/습득물</b>
-                    </div>
-                    <section>
-                        <div class="mainCon">
-                            <div class="reviewTitle">
-                                <table class="reviewTable" style="width: 450px; font-size: small;">
-                                    <thead></thead>
-                                    <tbody id="result" style="margin-top: 500px;"></tbody>
-                                </table>
-                                <br>
-                                <div
-                                    style="margin-left:33%; width: 152px; height: 46px; background: linear-gradient(0deg, #0032A0 0%, #0032A0 0%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center;">
-                                    <img style="width: 16px; height: 16px; margin-right: 5px;"
-                                        src="https://s3-alpha-sig.figma.com/img/fa8a/9d17/95235f0a627dea3a9ca8b6b21a964f72?Expires=1702252800&Signature=G9Xf03p7QWHQ0JNP1KBnAIeynNHDN8nPaG2AkcwwyW7SWu~ilOGLaZ2pmagLANjUWwmcW6vKRBsHYFawcWIPD-WZSk~uJHLyPeoiCwqYHXYC9HExWy0atm71wZw7z2kj8m0Vj7ue5RjmyjdH7AlzLx-6eBeeXbMOJhspkjZIzBPc7HOg7eIm3HnSzMvf0CvYPvhDn5ZpEV65Rtdcpggu01neUR-wNf4N1uk9lKQeicFfjUuXKUyY4nm0ZaFlvEZULE2EQmfOKHo4h6W2VvhpZR0FBetM21FM9S2yOl1Kb-Ffp6g8zkRkBp8olP63W6-JE3eL6ZjM51DiteqOsLeXhA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-                                    <a href="http://15.164.210.143/give.php"
-                                        style="text-decoration-line: none; color:white; font-size: 16px; font-family: Noto Sans KR; font-weight: 700; word-wrap: break-word">분실물
-                                        등록하기</a>
-                                </div>
-                            </div>
-                    </section>
+
+        </div>
+    </div>
 </body>
 
 </html>

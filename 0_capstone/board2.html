@@ -3,17 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>분실물 게시판</title>
-
     <style>
-        .reviewContent {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
         }
 
-        
+        .column {
+            float: center;
+            width: 33.33%;
+        }
+
+        .reviewContent {
+            margin-left: 5%;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .reviewImage {
+            width: 280px;
+            height: 280px;
+            border-radius: 20px;
+            border: solid gray 4px;
+        }
+
+        .reviewTable {
+            border-collapse: separate;
+            border-spacing: 0 35px;
+            /* 여기서 20px는 간격을 조절하는 값입니다. */
+        }
+
+        .reviewDate {
+            font-size: 35px;
+        }
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -71,7 +95,7 @@
                 <div style="flex-grow: 1;">게시글을 등록하여 주인을 찾아주세요!</div>
                 <img style="width:100px; height:90px; margin-right: 4%;" src="/0_capstone/wink.svg">
             </div>
-            <br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
 
             <div
                 style="margin-left:2%; color: black; font-size: 47px; font-family: Noto Sans KR; font-weight: 400; line-height: 30px; word-wrap: break-word">
@@ -79,29 +103,32 @@
             </div>
             <br>
 
-            <section>
-                <div class="mainCon">
-                    <div class="reviewTitle">
-                        <table class="reviewTable" style="width: 450px; font-size: small;">
-                            <thead></thead>
-                            <tbody id="result" style="margin-top: 500px;"></tbody>
-                        </table>
-                        <br>
+            <div class="mainCon">
+                <div class="reviewTitle" style="text-decoration-line: none;">
+                    <table class="reviewTable" style="margin-left: 3%; width: 96%; font-size: 40px">
+                        <thead></thead>
+                        <tbody id="result"></tbody>
+                    </table>
+                    <br>
 
-                    </div>
-            </section>
-
-
-            <div
-                style="margin:auto; width: 30%; height: 80px; background: linear-gradient(0deg, #0032A0 0%, #0032A0 0%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center;">
-                <img style="width: 50px; height: 43px; margin-right: 10px;" src="/0_capstone/regist.svg" />
-                <a href="http://15.164.210.143/give.php"
-                    style="text-decoration-line: none; color:white; font-size: 30px; font-family: Noto Sans KR; font-weight: 500; word-wrap: break-word">분실물 등록하기</a>
+                </div>
             </div>
 
 
+
+                <!--분실물 등록 버튼-->
+                <a href="http://15.164.210.143/give.php" style="text-decoration-line: none;">
+                    <div
+                        style="margin:auto; width: 40%; height: 100px; background: linear-gradient(0deg, #0032A0 0%, #0032A0 0%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center;">
+                        <img style="width: 60px; height: 60px; margin-right: 20px;" src="/0_capstone/regist.svg" />
+                        <span
+                            style="color:white; font-size: 38px; font-family: Noto Sans KR; font-weight: 500; word-wrap: break-word">분실물
+                            등록하기</span>
+                    </div>
+                </a>
+
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

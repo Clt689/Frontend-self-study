@@ -16,7 +16,7 @@ var markerPosition = new kakao.maps.LatLng(35.14232922274663, 126.93451741635835
 // 버스 아이콘 이미지 설정
 var markerImage = new kakao.maps.MarkerImage(
     '/0_capstone/bus-icon.svg', // 버스 아이콘 이미지 파일 경로
-    new kakao.maps.Size(130, 130), // 이미지 크기
+    new kakao.maps.Size(95, 95), // 이미지 크기
     {
         offset: new kakao.maps.Point(20, 20) // 이미지 중심을 마커의 중심으로 설정
     }
@@ -87,7 +87,7 @@ var positions = [
     },
     {
         title: '경상대(본관남쪽)',
-        latlng: new kakao.maps.LatLng(35.140888433987946, 126.93486879242569)
+        latlng: new kakao.maps.LatLng(35.1404828432253, 126.93491026464486)
     },
     {
         title: '본관북쪽',
@@ -109,7 +109,7 @@ var imageSrc1 = "https://cdn-icons-png.flaticon.com/128/6395/6395324.png";
 for (var i = 0; i < positions.length; i++) {
 
     // 마커 이미지의 이미지 크기 입니다
-    var imageSize1 = new kakao.maps.Size(100, 100); // 원래 (24,35)
+    var imageSize1 = new kakao.maps.Size(95, 95);
 
     // 마커 이미지를 생성합니다    
     var markerImage1 = new kakao.maps.MarkerImage(imageSrc1, imageSize1);
@@ -188,9 +188,9 @@ var linePath = [
 // 지도에 표시할 선을 생성합니다
 var polyline = new kakao.maps.Polyline({
     path: linePath, // 선을 구성하는 좌표배열 입니다
-    strokeWeight: 15, // 선의 두께 입니다
+    strokeWeight: 20, // 선의 두께 입니다
     strokeColor: '#FFAE00', // 선의 색깔입니다
-    strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
     strokeStyle: 'solid' // 선의 스타일입니다
 });
 

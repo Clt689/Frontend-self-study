@@ -7,9 +7,13 @@
   <link rel="stylesheet" type="text/css" href="main.css">
   <title>글등록</title>
   <style>
-    #file-upload-button{
-      width:100px;
+    #file-upload-button {
+      width: 100px;
       height: 100px;
+    }
+
+    .writeTypetext {
+      font-family: 'Noto Sans KR', sans-serif;
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,91 +31,112 @@
 </head>
 
 <body>
-  <div style="top:80px; width: 100%; height: 100%; position: relative; background: white">
-    <img src="x.jpg" style=" width:40px; height: 40px; margin-left:2%; margin-top: 23%;" onclick="history.back(1)" />
+  <div style="width: 100%; height: 100%; position: relative; background: white">
 
-    
+    <br>
     <div
-        style="width: 99%; height: 130px; top: 65px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto;">
+      style="width: 99%; height: 130px; top: 5px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto;">
+      <div
+        style="width: 99%; height: 130px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 25px">
+      </div>
+      <div
+        style="z-index: 2; width: 46px; height: 5px; left: 40px; top: 38%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
+      </div>
+      <div
+        style="z-index: 2; width: 36px; height: 5px; left: 40px; top: 58%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
+      </div>
+      <div
+        style="z-index: 1; display: flex;  height: 130px; align-items: center; justify-content: flex-start; width: 99%; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius:25px">
         <div
-            style="width: 99%; height: 130px; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 25px">
+          style=" margin-left:120px; text-align: center; color: white; font-size: 48px; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
+          분실물 게시판
         </div>
-        <div
-            style="z-index: 2; width: 46px; height: 5px; left: 40px; top: 38%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
-        </div>
-        <div
-            style="z-index: 2; width: 36px; height: 5px; left: 40px; top: 58%; position: absolute; background: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 1px; border: 1px white solid">
-        </div>
-        <div
-            style="z-index: 1; display: flex;  height: 130px; align-items: center; justify-content: flex-start; width: 99%; position: absolute; left: 0; right: 0; margin-left: auto; margin-right: auto; background: #0032A0; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius:25px">
-            <div
-                style="font-size: 48px; margin-left:120px; text-align: center; color: white; font-family: Noto Sans KR; font-weight: 400; line-height: 40px; word-wrap: break-word">
-                분실물 게시판
-            </div>
-        </div>
+      </div>
     </div>
+    <img src="x.jpg" style=" width:60px; height:60px; margin-left:3%; margin-top: 16%;" onclick="history.back(1)" />
+    <div
+      style="text-align: center; color: black; font-size: 47px; font-family: Noto Sans KR; font-weight: 700; line-height: 40px; word-wrap: break-word">
+      등록하기</div>
 
     <br><br>
-      
-      
-      <form id="myForm" action="#" method="POST" enctype="multipart/form-data">
-        <section>
-          <div class="mainCon" style=" margin-left: 2%;">
-            <div style="width: 99%; height: 0.3px; border: 4px rgba(0, 0, 0, 0.20) solid"></div>
-            <div style="margin-top: 3%; display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; border-radius: 40px; border: 5px rgba(0, 0, 0, 0.20) solid">
-              <input type="file" id="fileInput" style="display:none;" name="image" >
-              <img src="/0_capstone/camera.jpg" style="width: 100px; height: 100px; border-radius: 10px; border:3px;" onclick="document.getElementById('fileInput').click();" />
+
+
+    <form id="myForm" action="#" method="POST" enctype="multipart/form-data">
+      <section>
+        <div class="mainCon" style=" margin-left: 2%;">
+          <div style="margin-top: 0%; width: 99%; height: 0.3px; border: 3px rgba(0, 0, 0, 0.20) solid"></div>
+          <div
+            style="margin-top: 4%; display: flex; justify-content: center; align-items: center; width: 200px; height: 200px; border-radius: 40px; border: 5px rgba(0, 0, 0, 0.20) solid">
+            <input type="file" id="fileInput" style="display:none;" name="image">
+            <img src="camera.jpg" style="width: 120px; height: 120px; border-radius: 10px; border:3px;"
+              onclick="document.getElementById('fileInput').click();" />
           </div>
-          
-            <div class="writeTitle" style="font-size:50px;">제목</div>
-            <input class="writeTypeText" style="height:4%; border-radius: 5px;" type="text" name="title" size="53" placeholder="제목을 입력하세요." required></p>
-            <div class="writeTextarea">자세한 설명</div>
-            <textarea class="writeTextarea" style="width:390px; height:100px; border-color: black;border-radius: 5px;" name="story" placeholder="분실물 게시판에 올릴 내용을 작성해 주세요. 
-(습득 일시, 장소, 색깔 등 자세히 입력하시면 주인 찾기에
-도움이 돼요 :)" required></textarea>
-            
-            <input type="button" id="submit" value="작성완료" style="font-size: medium; color:white; width: 100px; height: 40px; background: rgba(0, 40, 128, 0.80); border-radius: 10px">
-            
-            
+          <div
+            style="text-align: center; color: rgba(0, 0, 0, 0.70); margin-top: 1%; margin-right: 78%; font-size: 35px; font-family: Noto Sans KR; font-weight: 700; line-height: 40px; word-wrap: break-word">
+            사진 첨부</div>
+
+          <div
+            style="text-align: center; color: black; margin-top: 6%; margin-right: 90%; font-size: 40px; font-family: Noto Sans KR; font-weight: 700; line-height: 40px; word-wrap: break-word">
+            제목</div>
+          <input class="writeTypeText"
+            style="margin-top: 2%; font-size: 40px; font-family: Noto sans-serif; height:5%; border-radius: 15px;"
+            type="text" name="title" size="45" placeholder=" 제목을 입력하세요" required></p>
+
+
+          <div
+            style="text-align: center; color: black; margin-top: 7%; margin-right: 77%; font-size: 40px; font-family: Noto Sans KR; font-weight: 700; line-height: 40px; word-wrap: break-word">
+            자세한 설명</div>
+          <textarea class="writeTextarea"
+            style="margin-top: 3%; width:98%; height:35%; border-color: black; border-radius: 15px; font-size: 40px; font-family: Noto sans-serif;"
+            name="story" placeholder=" 분실물 게시판에 올릴 내용을 작성해 주세요. 
+ ( 습득 일시, 장소, 색깔 등 자세히 입력하시면 
+ 주인 찾기에 도움이 돼요 :) )" required></textarea>
+
+          <div style="display: flex; justify-content: center;">
+            <input type="button" id="submit" value="작성완료"
+              style="font-size: 40px; margin-top: 5%; font-family: Noto Sans KR; color:white; width: 25%; height: 100px; font-weight: 500; background: rgba(0, 40, 128, 0.80); border-radius: 20px">
           </div>
-        </section>
-      </form>
 
-      
-        
-      </div>
 
-      <!-- 저장된 이미지를 표시하는 부분 -->
-      <div id="imageDisplay">
-      </div>
+        </div>
+      </section>
+    </form>
 
-      <script>
-        $(document).ready(function () {
-          $("#submit").click(function () {
-            var formData = new FormData($("#myForm")[0]);
-            $.ajax({
-              url: 'http://15.164.210.143/give2.php',
-              type: 'POST',
-              data: formData,
-              processData: false,
-              contentType: false,
-              success: function (data) {
-                if (data.success) {
-                  alert(data.success);
-                }
-              },
-              error: function (jqXHR) {
-                var errorData = JSON.parse(jqXHR.responseText);
-                if (errorData.error) {
-                  alert(errorData.error);
-                } else {
-                  alert('이미지 업로드에 실패했습니다.');
-                }
-              }
-            });
-          });
+
+
+  </div>
+
+  <!-- 저장된 이미지를 표시하는 부분 -->
+  <div id="imageDisplay">
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("#submit").click(function () {
+        var formData = new FormData($("#myForm")[0]);
+        $.ajax({
+          url: 'http://15.164.210.143/give2.php',
+          type: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function (data) {
+            if (data.success) {
+              alert(data.success);
+            }
+          },
+          error: function (jqXHR) {
+            var errorData = JSON.parse(jqXHR.responseText);
+            if (errorData.error) {
+              alert(errorData.error);
+            } else {
+              alert('이미지 업로드에 실패했습니다.');
+            }
+          }
         });
-      </script>
+      });
+    });
+  </script>
 
 </body>
 

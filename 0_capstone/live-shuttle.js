@@ -15,7 +15,7 @@ var markerPosition = new kakao.maps.LatLng(35.14232922274663, 126.93451741635835
 
 // 버스 아이콘 이미지 설정
 var markerImage = new kakao.maps.MarkerImage(
-    '/0_capstone/bus-icon.svg', // 버스 아이콘 이미지 파일 경로
+    'bus-icon.svg', // 버스 아이콘 이미지 파일 경로
     new kakao.maps.Size(95, 95), // 이미지 크기
     {
         offset: new kakao.maps.Point(20, 20) // 이미지 중심을 마커의 중심으로 설정
@@ -32,7 +32,7 @@ marker.setMap(map);
 // 서버로부터 위치 데이터를 받아와서 버스 아이콘 이동
 function updateBusLocation() {
     // 서버로부터 위치 데이터를 받아오는 Ajax 요청
-    fetch('http://15.164.210.143/Logtest.php')
+    fetch('https://15.164.210.143/Logtest.php')
         .then(response => response.json())
         .then(data => {
             // 받아온 위치로 버스 아이콘 이동
@@ -42,7 +42,7 @@ function updateBusLocation() {
         .catch(error => console.error('Error:', error));
 }
 
-// 1초 간격으로 위치 업데이트
+// 0.5초 간격으로 위치 업데이트
 setInterval(updateBusLocation, 500);
 
 

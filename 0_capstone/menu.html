@@ -1,53 +1,84 @@
 <!DOCTYPE html>
 <html>
-</body>
-<div
-  style="width: 100%; height: 100%; background: white; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-  <div style="width: 100%; height: 100%; position: relative">
-    <div style="width: 100%; height: 100%; left: 0px; top: 0px; position: absolute">
-      <div
-        style="width: 70%; height: 1800px; margin-top: 28%; position: absolute; background: #D9D9D9; border-radius: 25px">
+
+<head>
+  <style>
+  #myImage:hover {
+    border: 5px solid #0032A0;
+    border-radius: 50px;
+  }
+  </style>
+  <script>
+    function highlightBackground(elementId) {
+      var element = document.getElementById(elementId);
+      element.style.background = "rgba(217, 217, 217, 0.90)";
+    }
+
+    function resetBackground(elementId) {
+      var element = document.getElementById(elementId);
+      element.style.background = "rgba(217, 217, 217, 0.50)";
+    }
+  </script>
+</head>
+
+<body>
+  <div
+    style="width: 100%; height: 100%; background: white; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+    <div style="width: 100%; height: 100%; position: relative">
+      <div style="width: 100%; height: 100%; left: 0px; top: -10px; position: absolute">
+        <div
+          style="width: 70%; height: 1800px; margin-top: 28%; position: absolute; background: #D9D9D9; border-radius: 25px">
+        </div>
+        <div
+          style="width: 99%; height: 2100px; left: 0px; top: 0px; position: absolute; background: rgba(0, 50, 160, 0.30)">
+          <a onclick="location.href='live.html';" onmouseover="highlightBackground('liveLink')"
+            onmouseout="resetBackground('liveLink')" id="liveLink"
+            style="width: 67%; height: 180px; left: 15px; top: 15%; position: absolute; background: rgba(217, 217, 217, 0.50); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+          </a>
+
+          <div onclick="location.href='etiquette.html';" onmouseover="highlightBackground('etiquetteLink')"
+            onmouseout="resetBackground('etiquetteLink')" id="etiquetteLink"
+            style="width: 67%; height: 180px; left: 15px; top: 25%; position: absolute; background: rgba(217, 217, 217, 0.50); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+          </div>
+
+          <div onclick="location.href='board.html';" onmouseover="highlightBackground('boardLink')"
+            onmouseout="resetBackground('boardLink')" id="boardLink"
+            style="width: 67%; height: 180px; left: 15px; top: 35%; position: absolute; background: rgba(217, 217, 217, 0.50); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
+          </div>
+
+
+          <div onclick="location.href='live.html';"
+            style="left: 25%; margin-top: 40%; position: absolute; text-align: center; color: black; font-size: 45px; font-family: Noto Sans KR; font-weight: 500; line-height: 40px; word-wrap: break-word">
+            실시간 버스 위치</div>
+
+          <div onclick="location.href='etiquette.html';" onmouseover="highlightBackground('etiquetteText')"
+            onmouseout="resetBackground('etiquetteText')" id="etiquetteText"
+            style="left: 24%; margin-top: 62%; position: absolute; text-align: center; color: black; font-size: 45px; font-family: Noto Sans KR; font-weight: 500; line-height: 40px; word-wrap: break-word">
+            셔틀버스 이용 방법
+          </div>
+
+          <div onclick="location.href='board.html';" onmouseover="highlightBackground('boardText')"
+            onmouseout="resetBackground('boardText')" id="boardText"
+            style="left: 28%; margin-top: 84%; position: absolute; text-align: center; color: black; font-size: 45px; font-family: Noto Sans KR; font-weight: 500; line-height: 40px; word-wrap: break-word">
+            분실물 게시판
+          </div>
+
+          <div onclick="location.href='main.html';">
+            <img id="myImage" style="width: 180px; height: 180px; left: 76%; top: 5%; position: absolute;" src="home.png" />
+          </div>
+
+        </div>
       </div>
-      <div
-        style="width: 99%; height: 2100px; left: 0px; top: 0px; position: absolute; background: rgba(0, 50, 160, 0.30)">
-        <div l onclick="location.href='live.html';"
-          style="width: 67%; height: 180px; left: 15px; top: 15%; position: absolute; background: rgba(217, 217, 217, 0.50); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
-        </div>
-
-        <div onclick="location.href='etiquette.html';"
-          style="width: 67%; height: 180px; left: 15px; top: 25%; position: absolute; background: rgba(217, 217, 217, 0.50); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
-        </div>
-        <div onclick="location.href='board.html';"
-          style="width: 67%; height: 180px; left: 15px; top: 35%; position: absolute; background: rgba(217, 217, 217, 0.50); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 50px">
-        </div>
-
-        <div onclick="location.href='live.html';"
-          style="left: 25%; margin-top: 40%; position: absolute; text-align: center; color: black; font-size: 45px; font-family: Noto Sans KR; font-weight: 500; line-height: 40px; word-wrap: break-word">
-          실시간 버스 위치</div>
-
-        <div onclick="location.href='etiquette.html';"
-          style="left: 24%; margin-top: 62%; position: absolute; text-align: center; color: black; font-size: 45px; font-family: Noto Sans KR; font-weight: 500; line-height: 40px; word-wrap: break-word">
-          셔틀버스 이용 방법</div>
-
-        <div onclick="location.href='board.html';"
-          style="left: 28%; margin-top: 84%; position: absolute; text-align: center; color: black; font-size: 45px; font-family: Noto Sans KR; font-weight: 500; line-height: 40px; word-wrap: break-word">
-          분실물 게시판</div>
-
-        <div onclick="location.href='main.html';">
-          <img style="width: 180px; height: 180px; left: 76%; top: 5%; position: absolute;" src="home.png" />
-        </div>
-
-      </div>
+      <img onclick="location.href='live.html';"
+        style="width: 105px; height: 105px; left: 65px; margin-top: 36%; position: absolute" src="live2.png" />
+      <img onclick="location.href='etiquette.html';" onmouseover="highlightBackground('etiquetteImage')"
+        onmouseout="resetBackground('etiquetteImage')" id="etiquetteImage"
+        style="width: 105px; height: 105px; left: 65px; margin-top: 58%; position: absolute" src="etiquette.png" />
+      <img onclick="location.href='board.html';" onmouseover="highlightBackground('boardImage')"
+        onmouseout="resetBackground('boardImage')" id="boardImage"
+        style="width: 100px; height: 100px; left: 70px; margin-top: 80%; position: absolute" src="board2.png" />
     </div>
-    <img onclick="location.href='live.html';"
-      style="width: 105px; height: 105px; left: 65px; margin-top: 36%; position: absolute" src="live2.png" />
-    <img onclick="location.href='etiquette.html';"
-      style="width: 105px; height: 105px; left: 65px; margin-top: 58%; position: absolute" src="etiquette.png" />
-    <img onclick="location.href='board.html';"
-      style="width: 100px; height: 100px; left: 70px; margin-top: 80%; position: absolute" src="board2.png" />
-
   </div>
-</div>
 
 </body>
 
